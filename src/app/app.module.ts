@@ -7,11 +7,40 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+
 import { ProductsComponent } from './components/products/products.component';
 import { DetailsComponent } from './components/details/details.component';
 
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+// import { ProductsComponent } from './components/products/products.component';
+import { CartComponent } from './components/cart/cart.component';
+import { OrderComponent } from './components/order/order.component';
+// import { DetailsComponent } from './components/details/details.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+
+// @NgModule({
+//   declarations: [AppComponent, ProductsComponent, DetailsComponent],
+
 @NgModule({
-  declarations: [AppComponent, ProductsComponent, DetailsComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProductsComponent,
+    CartComponent,
+    OrderComponent,
+    DetailsComponent,
+    ContactusComponent,
+    AboutusComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
