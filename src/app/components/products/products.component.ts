@@ -8,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  public pElectronicList: any;
-  public pClothesList: any;
-  public pSportsList: any;
-  public pCronaFightList: any;
-  public plightingToolsList: any;
+  public productList: any;
 
   constructor(
     private api: ProductApiService,
@@ -20,26 +16,11 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.api.getElectronicProducts().subscribe((res) => {
-      this.pElectronicList = res;
-    });
-
-    this.api.getClothesProducts().subscribe((res) => {
-      this.pClothesList = res;
-    });
-
-    this.api.getSportsProducts().subscribe((res) => {
-      this.pSportsList = res;
-    });
-
-    this.api.getCronaFightProducts().subscribe((res) => {
-      this.pCronaFightList = res;
-    });
-
-    this.api.getlightingToolsProducts().subscribe((res) => {
-      this.plightingToolsList = res;
+    this.api.getProducts().subscribe((res) => {
+      this.productList = res;
     });
   }
+
   showOnDetails(item: any) {
     this.detailService.showOnDetails(item);
   }
