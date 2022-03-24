@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  --red: #ff0000;
+}
+.container > h2 {
+  font-size: 20pt;
+  // font-weight: lighte;
+}
+.card {
+  width: 23%;
+  margin: 8px;
+  padding: 8px;
+  cursor: pointer;
+  h3 {
+    direction: rtl;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
+  }
+  p {
+    font-weight: bold;
+    color: var(--red);
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    padding-top: 6px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    transition: 1s;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+  p,
+  del {
+    direction: rtl;
+    padding-right: 8px;
+  }
+}

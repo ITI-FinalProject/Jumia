@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Products</title>
+  </head>
+  <body>
+    <!-- Electronic Device -->
+    <div class="container">
+      <h2 lang="ar" class="my-4 mx-4 text-end">أجهزة الكترونية</h2>
+      <div class="row">
+        <ng-container *ngFor="let item of pElectronicList">
+          <div
+            routerLink="/details"
+            (click)="showOnDetails(item)"
+            class="card col-12 col-md-3"
+          >
+            <img src="{{ item.image }}" alt="" />
+            <h3 class="ms-auto text-start">{{ item.name }}</h3>
+            <p class="me-auto">{{ item.price }} جنيه</p>
+            <del class="me-auto">{{ item.old_price }} جنيه</del>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- Clothes -->
+    <div class="container">
+      <h2 lang="ar" class="my-4 mx-4 text-end">الملابس</h2>
+      <div class="row">
+        <ng-container *ngFor="let item of pClothesList">
+          <div
+            routerLink="/details"
+            (click)="showOnDetails(item)"
+            class="card col-md-3"
+          >
+            <img src="{{ item.image }}" alt="" />
+            <h3 class="ms-auto text-start">
+              {{ item.name }}
+            </h3>
+            <p class="me-auto">{{ item.price }} جنيه</p>
+            <del class="me-auto">{{ item.old_price }} جنيه</del>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- Sports -->
+    <div class="container">
+      <h2 lang="ar" class="my-4 mx-4 text-end">الرياضة</h2>
+      <div class="row">
+        <ng-container *ngFor="let item of pSportsList">
+          <div
+            routerLink="/details"
+            (click)="showOnDetails(item)"
+            class="card col-md-3"
+          >
+            <img src="{{ item.image }}" alt="" />
+            <h3 class="ms-auto text-start">
+              {{ item.name }}
+            </h3>
+            <p class="me-auto">{{ item.price }} جنيه</p>
+            <del class="me-auto">{{ item.old_price }} جنيه</del>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- CronaFight -->
+    <div class="container">
+      <h2 lang="ar" class="my-4 mx-4 text-end">مكافحة كورونا</h2>
+      <div class="row">
+        <ng-container *ngFor="let item of pCronaFightList">
+          <div
+            routerLink="/details"
+            (click)="showOnDetails(item)"
+            class="card col-md-3"
+          >
+            <img src="{{ item.image }}" alt="" />
+            <h3 class="ms-auto text-start">
+              {{ item.name }}
+            </h3>
+            <p class="me-auto">{{ item.price }} جنيه</p>
+            <del class="me-auto">{{ item.old_price }} جنيه</del>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- lightingTools -->
+    <div class="container">
+      <h2 lang="ar" class="my-4 mx-4 text-end">أدوات الإضاءة</h2>
+      <div class="row">
+        <ng-container *ngFor="let item of plightingToolsList">
+          <div
+            routerLink="/details"
+            (click)="showOnDetails(item)"
+            class="card col-md-3"
+          >
+            <img src="{{ item.image }}" alt="" />
+            <h3 class="ms-auto text-start">
+              {{ item.name }}
+            </h3>
+            <p class="me-auto">{{ item.price }} جنيه</p>
+            <del class="me-auto">{{ item.old_price }} جنيه</del>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </body>
+</html>

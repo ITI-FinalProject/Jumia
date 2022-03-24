@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Details</title>
+  </head>
+  <body>
+    <div class="container ms-5">
+      <div class="row">
+        <div class="card col-md-6 col-12">
+          <img src="{{ product.image }}" alt="not found" />
+        </div>
+        <div class="card second col-md-6 col-12">
+          <div>
+            <h3>{{ product.name }}</h3>
+            <br />
+            <br />
+            <span class="ms-4"
+              ><strong> {{ product.price }} جنيه</strong></span
+            >
+            <span style="color: #cecece"
+              ><del>{{ product.old_price }}</del> جنيه </span
+            ><br />
+            <br />
+            <span class="color">الألوان : </span> <br />
+            <input type="color" value="#2e0fb6" />
+            <input type="color" value="#9c6d6d" />
+            <input type="color" /> <br /><br />
+            <span class="color">الحجم : </span> <br />
+            <select class="ps-5" name="select">
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+            </select>
+            <br />
+            <br />
+            <span class="color">الكمية : </span> <br />
+            <span class="quantity">
+              <span style="cursor: pointer">-</span>
+              <span style="color: black">1</span>
+              <span style="cursor: pointer">+</span>
+            </span>
+            <button>إضافة لسلة التسوق</button>
+            <!-- <i class="fa-brands fa-gratipay"></i> -->
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
