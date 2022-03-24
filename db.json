@@ -1,5 +1,5 @@
 {
-        "electronicDevices": [
+        "Products": [
             {
                 "id": 1,
                 "price": 25000,
@@ -169,9 +169,8 @@
                 ],
                 "in_favorites": false,
                 "in_cart": false
-            }
-        ],
- 	"Clothes": [
+            },
+      
             {
                 "id": 90,
                 "price": 110,
@@ -233,9 +232,7 @@
                 ],
                 "in_favorites": false,
                 "in_cart": false
-            }
-        ],
-        "lightingTools": [
+            },
             {
                 "id": 88,
                 "price": 160.6399999999999863575794734060764312744140625,
@@ -276,9 +273,7 @@
                 ],
                 "in_favorites": false,
                 "in_cart": false
-            }
-        ],
-	"Sports": [
+            },
             {
                 "id": 58,
                 "price": 1083,
@@ -327,9 +322,7 @@
                 ],
                 "in_favorites": false,
                 "in_cart": false
-            }
-        ],
-	 "CoronaFight": [
+            },
             {
                 "id": 80,
                 "price": 45,
