@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -22,9 +23,13 @@ import { OrderComponent } from './components/order/order.component';
 // import { DetailsComponent } from './components/details/details.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { PageNotfoundComponent } from './shared/page-notfound/page-notfound.component';
+import { SwiperModule } from 'swiper/angular';
+
 
 // @NgModule({
 //   declarations: [AppComponent, ProductsComponent, DetailsComponent],
+
 
 @NgModule({
   declarations: [
@@ -40,6 +45,7 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     DetailsComponent,
     ContactusComponent,
     AboutusComponent,
+    PageNotfoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +55,9 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    SwiperModule
+  
+
   ],
 
   exports: [],

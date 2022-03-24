@@ -3,6 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  BASE_URL:"http://localhost:3000/",  
+  HOME:"home",
+  BANNERS:"banners",
+  CATEGORIES:"categories",
   production: false
 };
 
