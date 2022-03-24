@@ -13,7 +13,6 @@ export class ProductsComponent implements OnInit {
   public pSportsList: any;
   public pCronaFightList: any;
   public plightingToolsList: any;
-  // product: IProduct[] = [];
 
   constructor(
     private api: ProductApiService,

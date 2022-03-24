@@ -20,6 +20,6 @@ export class DetailApiService {
   showOnDetails(product: any) {
     this.detailItemList = product;
     this.productList.next(this.detailItemList);
-    console.log(this.detailItemList);
+    // console.log(this.detailItemList);
   }
 }
