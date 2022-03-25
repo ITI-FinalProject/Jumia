@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,19 +16,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-// import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
-// import { DetailsComponent } from './components/details/details.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { PageNotfoundComponent } from './shared/page-notfound/page-notfound.component';
 import { SwiperModule } from 'swiper/angular';
 
-
 // @NgModule({
 //   declarations: [AppComponent, ProductsComponent, DetailsComponent],
-
 
 @NgModule({
   declarations: [
@@ -47,6 +42,7 @@ import { SwiperModule } from 'swiper/angular';
     AboutusComponent,
     PageNotfoundComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -55,9 +51,7 @@ import { SwiperModule } from 'swiper/angular';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    SwiperModule
-  
-
+    SwiperModule,
   ],
 
   exports: [],

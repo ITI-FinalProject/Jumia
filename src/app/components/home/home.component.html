@@ -1,324 +1,311 @@
 <div class="container-fluid g-0 m-0">
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-            
-          <img src="assets/apartment-architecture-carpet-276583.png" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="text-center">Make You House Into aHome</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="assets/apartment-architecture-carpet-276583.png" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="assets/apartment-architecture-carpet-276583.png" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
     </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="assets/apartment-architecture-carpet-276583.png"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="text-center">Make You House Into aHome</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="assets/apartment-architecture-carpet-276583.png"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="assets/apartment-architecture-carpet-276583.png"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
-
-
-
-
-
-
-
- 
-
 
 <!-- <div class="container-fluid g-0 m-0">
 
-    
+
   <ngb-carousel>
     <ng-template ngbSlide *ngFor="let image of list.banners">
       <div class="wrapper stylenave">
         <img [src]="image.image"  class="rounded mx-auto d-block" alt="Random first slide">
       </div>
-    
+
     </ng-template>
   </ngb-carousel>
-      
+
   </div> -->
 
 <!-- add product by catehories -->
-  <div class="col-12 style_showmore   px-3">
-    <span>Selected Just For You</span>
-    <button>Show More</button>
-   </div>
+<div class="col-12 style_showmore px-3">
+  <span>Selected Just For You</span>
+  <button>Show More</button>
+</div>
 
-  <div class="container-fluid g-0  px-3">
-    <div class="col-md-12">
-      <swiper [slidesPerView]="3" [spaceBetween]="50" [navigation]="true" [breakpoints]="breakpoints">
-    
-       
-        <ng-container *ngFor="let item of list.products">
-    
-          <ng-template  swiperSlide *ngIf="item.categories_id==44">
-            
-            <div class="card card-border-none resp-wrap-align-center">
-              <img src={{item.image}} class="card-img-top img-fluid rounded" alt="...">
-              <div class="card-body">
-                <div class="overflow-hidden"> 
-                  <h5  class="card-title fs-6  d-inline-block text-truncate font-monospace text-start text-primary ">
-                      {{item.name}}</h5>
-                </div>
-                <div class="styleprice">
-                  <p class="card-text text-muted">{{"$ "+item.price}}</p>
-                  <p class="card-text text-danger text-decoration-line-through">{{"$ "+item.old_price}}</p>
-                </div>
-                
+<div class="container-fluid g-0 px-3">
+  <div class="col-md-12">
+    <swiper
+      [slidesPerView]="3"
+      [spaceBetween]="50"
+      [navigation]="true"
+      [breakpoints]="breakpoints"
+    >
+      <ng-container *ngFor="let item of list.products">
+        <ng-template swiperSlide *ngIf="item.categories_id == 44">
+          <div class="card card-border-none resp-wrap-align-center">
+            <img
+              src="{{ item.image }}"
+              class="card-img-top img-fluid rounded"
+              alt="..."
+            />
+            <div class="card-body">
+              <div class="overflow-hidden">
+                <h5
+                  class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+                >
+                  {{ item.name }}
+                </h5>
               </div>
-              <div class="alert  alert-dark stylealert">
-                  <i   class="fas fa-cart-plus text-primary" >   </i>
-                  <i class="fa-solid fa-heart text-primary"></i>
-                </div>
-               
-                
+              <div class="styleprice">
+                <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+                <p class="card-text text-danger text-decoration-line-through">
+                  {{ "$ " + item.old_price }}
+                </p>
               </div>
-
-          
-            
-  
-    
-    
-          </ng-template>
-    
-        </ng-container>
-      
-      
-      </swiper>
-    
-    </div>
-  </div>
-
-
-
-  <div class="col-12 style_showmore   px-3">
-    <span>Selected Just For You</span>
-    <button>Show More</button>
-   </div>
-
-  <div class="container-fluid g-0  px-3">
-    <div class="col-md-12">
-      <swiper [slidesPerView]="3" [spaceBetween]="50" [navigation]="true" [breakpoints]="breakpoints">
-    
-       
-        <ng-container *ngFor="let item of list.products">
-    
-         
-
-          <ng-template  swiperSlide   *ngIf="item.categories_id == 42 " >
-            <div class="card card-border-none resp-wrap-align-center">
-              <img src={{item.image}} class="card-img-top img-fluid rounded" alt="...">
-              <div class="card-body">
-                <div class="overflow-hidden"> 
-                  <h5  class="card-title fs-6  d-inline-block text-truncate font-monospace text-start text-primary ">
-                      {{item.name}}</h5>
-                </div>
-                <div class="styleprice">
-                  <p class="card-text text-muted">{{"$ "+item.price}}</p>
-                  <p class="card-text text-danger text-decoration-line-through">{{"$ "+item.old_price}}</p>
-                </div>
-                
-              </div>
-              <div class="alert  alert-dark stylealert">
-                  <i   class="fas fa-cart-plus text-primary" >   </i>
-                  <i class="fa-solid fa-heart text-primary"></i>
-                </div>
-               
-                
-              </div>
-
-
-          
-           
-          </ng-template>
-    
-        </ng-container>
-      
-      
-      </swiper>
-    
-    </div>
-  </div>
-
-
-
-
-
-
-  
-<div class="container-fluid">
-  <div class="row g-0 my-5" id="our">
- 
-    <h2 class="text-center text-uppercase col-12 my-5">Why should you choose us?</h2>
-
-   <div class="col-12 col-sm-6  col-md-3">
- 
-     
-      <div class="card-body style_card_body ">
-        <div class=" text-start">
-          <div class="iconstyle card-title">
-            <i class="fa-solid fa-truck-fast fa-3x  card-img-top  text-start"></i>
+            </div>
+            <div class="alert alert-dark stylealert">
+              <i class="fas fa-cart-plus text-primary"> </i>
+              <i class="fa-solid fa-heart text-primary"></i>
+            </div>
           </div>
-        <h4 class=" text-uppercase card-subtitle my-2">Free Shipping</h4>
-        <p class=" card-text  text-secondary">
-          All purchases over $399 are eligible for
-          free shipping via UPS Pack and Ship.
-        </p>
-
-      </div>
-
-    
-
-  
-
- 
-
-  </div>
-   </div>
-   <div class="col-12 col-sm-6  col-md-3">
- 
-     
-      <div class="card-body style_card_body">
-        <div class=" text-start">
-          <div class="iconstyle card-title">
-          
-            <i class="fa-solid fa-credit-card  fa-3x  card-img-top  text-start"></i>
-          </div>
-        <h4 class=" text-uppercase card-subtitle my-2">Easy Payments</h4>
-        <p class=" card-text  text-secondary">
-          All payments are processed instantly
-          over a secure payment protocol.
-        </p>
-
-      </div>
-
-    
-
-  
-
- 
-
-  </div>
-   </div>
-
-   <div class="col-12 col-sm-6  col-md-3">
-
-     
-      <div class="card-body style_card_body ">
-        <div class=" text-start">
-          <div class="iconstyle card-title">
-            <i class="fa-solid fa-hand-holding-dollar fa-3x  card-img-top  text-start"></i>
-          </div>
-        <h4 class=" text-uppercase card-subtitle my-2">Money-Back Guarantee</h4>
-        <p class=" card-text  text-secondary">
-          If an item arrived damaged or you've
-changed your mind, you can send it
-back for a full refund.
-        </p>
-
-      </div>
-
-    </div>
-
-
-   </div>
-
-   <div class="col-12 col-sm-6  col-md-3">     
-      <div class="card-body style_card_body">
-        <div class=" text-start">
-          <div class="iconstyle card-title">
-            <i class="fa-solid fa-clone fa-3x  card-img-top  text-center"></i>
-          </div>
-        <h4 class=" text-uppercase card-subtitle my-2">Finest Quality</h4>
-        <p class=" card-text  text-secondary">
-          Designed to last, each of our products has
-been crafted with the finest materials.
-        </p>
-      </div>
-    
-  </div>
-   </div>
-
-  
-
-   
-  
-
+        </ng-template>
+      </ng-container>
+    </swiper>
   </div>
 </div>
 
-
-
-<div class="col-12 style_showmore   px-3">
+<div class="col-12 style_showmore px-3">
   <span>Selected Just For You</span>
   <button>Show More</button>
- </div>
+</div>
 
-<div class="container-fluid g-0  px-3">
+<div class="container-fluid g-0 px-3">
   <div class="col-md-12">
-    <swiper [slidesPerView]="3" [spaceBetween]="50" [navigation]="true" [breakpoints]="breakpoints">
-  
-     
+    <swiper
+      [slidesPerView]="3"
+      [spaceBetween]="50"
+      [navigation]="true"
+      [breakpoints]="breakpoints"
+    >
       <ng-container *ngFor="let item of list.products">
-  
-       
-
-        <ng-template  swiperSlide   *ngIf="item.categories_id == 46 " >
+        <ng-template swiperSlide *ngIf="item.categories_id == 42">
           <div class="card card-border-none resp-wrap-align-center">
-            <img src={{item.image}} class="card-img-top img-fluid rounded" alt="...">
+            <img
+              src="{{ item.image }}"
+              class="card-img-top img-fluid rounded"
+              alt="..."
+            />
             <div class="card-body">
-              <div class="overflow-hidden"> 
-                <h5  class="card-title fs-6  d-inline-block text-truncate font-monospace text-start text-primary ">
-                    {{item.name}}</h5>
+              <div class="overflow-hidden">
+                <h5
+                  class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+                >
+                  {{ item.name }}
+                </h5>
               </div>
               <div class="styleprice">
-                <p class="card-text text-muted">{{"$ "+item.price}}</p>
-                <p class="card-text text-danger text-decoration-line-through">{{"$ "+item.old_price}}</p>
+                <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+                <p class="card-text text-danger text-decoration-line-through">
+                  {{ "$ " + item.old_price }}
+                </p>
               </div>
-              
             </div>
-            <div class="alert  alert-dark stylealert">
-                <i   class="fas fa-cart-plus text-primary" >   </i>
-                <i class="fa-solid fa-heart text-primary"></i>
-              </div>
-             
-              
+            <div class="alert alert-dark stylealert">
+              <i class="fas fa-cart-plus text-primary"> </i>
+              <i class="fa-solid fa-heart text-primary"></i>
             </div>
-
-
-        
-         
+          </div>
         </ng-template>
-  
       </ng-container>
-    
-    
     </swiper>
-  
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row g-0 my-5" id="our">
+    <h2 class="text-center text-uppercase col-12 my-5">
+      Why should you choose us?
+    </h2>
+
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="card-body style_card_body">
+        <div class="text-start">
+          <div class="iconstyle card-title">
+            <i class="fa-solid fa-truck-fast fa-3x card-img-top text-start"></i>
+          </div>
+          <h4 class="text-uppercase card-subtitle my-2">Free Shipping</h4>
+          <p class="card-text text-secondary">
+            All purchases over $399 are eligible for free shipping via UPS Pack
+            and Ship.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="card-body style_card_body">
+        <div class="text-start">
+          <div class="iconstyle card-title">
+            <i
+              class="fa-solid fa-credit-card fa-3x card-img-top text-start"
+            ></i>
+          </div>
+          <h4 class="text-uppercase card-subtitle my-2">Easy Payments</h4>
+          <p class="card-text text-secondary">
+            All payments are processed instantly over a secure payment protocol.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="card-body style_card_body">
+        <div class="text-start">
+          <div class="iconstyle card-title">
+            <i
+              class="fa-solid fa-hand-holding-dollar fa-3x card-img-top text-start"
+            ></i>
+          </div>
+          <h4 class="text-uppercase card-subtitle my-2">
+            Money-Back Guarantee
+          </h4>
+          <p class="card-text text-secondary">
+            If an item arrived damaged or you've changed your mind, you can send
+            it back for a full refund.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="card-body style_card_body">
+        <div class="text-start">
+          <div class="iconstyle card-title">
+            <i class="fa-solid fa-clone fa-3x card-img-top text-center"></i>
+          </div>
+          <h4 class="text-uppercase card-subtitle my-2">Finest Quality</h4>
+          <p class="card-text text-secondary">
+            Designed to last, each of our products has been crafted with the
+            finest materials.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-12 style_showmore px-3">
+  <span>Selected Just For You</span>
+  <button>Show More</button>
+</div>
+
+<div class="container-fluid g-0 px-3">
+  <div class="col-md-12">
+    <swiper
+      [slidesPerView]="3"
+      [spaceBetween]="50"
+      [navigation]="true"
+      [breakpoints]="breakpoints"
+    >
+      <ng-container *ngFor="let item of list.products">
+        <ng-template swiperSlide *ngIf="item.categories_id == 46">
+          <div class="card card-border-none resp-wrap-align-center">
+            <img
+              src="{{ item.image }}"
+              class="card-img-top img-fluid rounded"
+              alt="..."
+            />
+            <div class="card-body">
+              <div class="overflow-hidden">
+                <h5
+                  class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+                >
+                  {{ item.name }}
+                </h5>
+              </div>
+              <div class="styleprice">
+                <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+                <p class="card-text text-danger text-decoration-line-through">
+                  {{ "$ " + item.old_price }}
+                </p>
+              </div>
+            </div>
+            <div class="alert alert-dark stylealert">
+              <i class="fas fa-cart-plus text-primary"> </i>
+              <i class="fa-solid fa-heart text-primary"></i>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </swiper>
   </div>
 </div>
