@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   public productList: any;
+  errorMassage: any;
 
   constructor(
     private api: ProductApiService,
@@ -16,9 +17,14 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.api.getProducts().subscribe((res) => {
-      this.productList = res;
-    });
+    this.api.getProducts().subscribe(
+      (res) => {
+        this.productList = res;
+      },
+      (error) => {
+        this.errorMassage = error;
+      }
+    );
   }
 
   showOnDetails(item: any) {
