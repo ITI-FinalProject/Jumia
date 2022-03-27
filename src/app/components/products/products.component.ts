@@ -1,6 +1,7 @@
 import { DetailApiService } from './../../services/detail-api.service';
 import { ProductApiService } from './../../services/product-api.service';
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -10,10 +11,12 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
   public productList: any;
   errorMassage: any;
+  searchKey:string="";
 
   constructor(
     private api: ProductApiService,
-    private detailService: DetailApiService
+    private detailService: DetailApiService,
+    private cartService:CartService,
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +28,10 @@ export class ProductsComponent implements OnInit {
         this.errorMassage = error;
       }
     );
+
+    this.cartService.search.subscribe((val:any)=>{
+      this.searchKey = val;
+    })
   }
 
   showOnDetails(item: any) {

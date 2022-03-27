@@ -22,6 +22,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { PageNotfoundComponent } from './shared/page-notfound/page-notfound.component';
 import { SwiperModule } from 'swiper/angular';
+import { FilterPipe } from './shared/page-notfound/filter.pipe';
 
 // @NgModule({
 //   declarations: [AppComponent, ProductsComponent, DetailsComponent],
@@ -41,6 +42,7 @@ import { SwiperModule } from 'swiper/angular';
     ContactusComponent,
     AboutusComponent,
     PageNotfoundComponent,
+    FilterPipe,
   ],
 
   imports: [

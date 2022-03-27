@@ -110,7 +110,7 @@
       [navigation]="true"
       [breakpoints]="breakpoints"
     >
-      <ng-container *ngFor="let item of list.products">
+      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'">
         <ng-template swiperSlide *ngIf="item.categories_id == 44">
           <div class="card card-border-none resp-wrap-align-center">
             <img
@@ -134,7 +134,7 @@
               </div>
             </div>
             <div class="alert alert-dark stylealert">
-              <i class="fas fa-cart-plus text-primary"> </i>
+              <button style="border: none; background-color: #D3D3D4;" (click)="addToCart(item)"><i class="fas fa-cart-plus text-primary"></i></button>
               <i class="fa-solid fa-heart text-primary"></i>
             </div>
           </div>
@@ -157,7 +157,7 @@
       [navigation]="true"
       [breakpoints]="breakpoints"
     >
-      <ng-container *ngFor="let item of list.products">
+      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'">
         <ng-template swiperSlide *ngIf="item.categories_id == 42">
           <div class="card card-border-none resp-wrap-align-center">
             <img
@@ -181,7 +181,7 @@
               </div>
             </div>
             <div class="alert alert-dark stylealert">
-              <i class="fas fa-cart-plus text-primary"> </i>
+              <button style="border: none; background-color: #D3D3D4;" (click)="addToCart(item)"><i class="fas fa-cart-plus text-primary"></i></button>
               <i class="fa-solid fa-heart text-primary"></i>
             </div>
           </div>
@@ -276,7 +276,7 @@
       [navigation]="true"
       [breakpoints]="breakpoints"
     >
-      <ng-container *ngFor="let item of list.products">
+      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'">
         <ng-template swiperSlide *ngIf="item.categories_id == 46">
           <div class="card card-border-none resp-wrap-align-center">
             <img
@@ -300,7 +300,7 @@
               </div>
             </div>
             <div class="alert alert-dark stylealert">
-              <i class="fas fa-cart-plus text-primary"> </i>
+              <button style="border: none; background-color: #D3D3D4;" (click)="addToCart(item)"><i class="fas fa-cart-plus text-primary"></i></button>
               <i class="fa-solid fa-heart text-primary"></i>
             </div>
           </div>
