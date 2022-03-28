@@ -47,7 +47,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="cart">
             <i class="fa-solid fa-cart-plus fs-5"></i>
-            <div style="font-size: 10px; " class="badge bg-danger">{{totalItem}}</div>
+            <div *ngIf="totalItem !=0" style="font-size: 10px; " class="badge bg-danger">{{totalItem}}</div>
           </a>
         </li>
 
