@@ -7,6 +7,7 @@ export const environment = {
   HOME:"home",
   BANNERS:"banners",
   CATEGORIES:"categories",
+  PRODUCTS:"Products",
   production: false
 };
 

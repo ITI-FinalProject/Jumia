@@ -9,6 +9,7 @@
 }
 .card{
     margin: .5rem;
+    
 }
 
 // .style_card{
@@ -16,14 +17,22 @@
 //     flex-direction: row;
 // }
 
-.card>img{
-    opacity: .7;
+.card>img,.card>.card-img-overlay{
+    // opacity: .7;
     height: 400px;
     padding: 1rem;
-}
-.card>img:hover,.card:hover .stylealert{
-    opacity: 1;
     transition: 1s;
+    
+}
+
+.card:hover .stylealert{
+    opacity: 1;
+
+}
+.card>img:hover,.card>.card-img-overlay:hover{
+     transform: scale(1.1);
+    cursor: pointer;
+
 }
 
 

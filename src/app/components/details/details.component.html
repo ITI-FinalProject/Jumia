@@ -1,18 +1,18 @@
 <div class="container ms-5">
   <div class="row">
     <div class="card col-md-6 col-12">
-      <img src="{{ product.image }}" alt="not found" />
+      <img src="{{ getOneProduct.image }}" alt="not found" />
     </div>
     <div class="card second col-md-6 col-12">
       <div>
-        <h3 class="my-5">{{ product.name }}</h3>
+        <h3 class="my-5">{{ getOneProduct.name }}</h3>
         <br />
         <br />
         <span class="ms-4"
-          ><strong>$ {{ product.price }} </strong></span
+          ><strong>$ {{ getOneProduct.price }} </strong></span
         >
         <span style="color: #cecece">
-          $ <del>{{ product.old_price }}</del>
+          $ <del>{{ getOneProduct.old_price }}</del>
         </span>
 
         <h4 class="color">Color :</h4>
@@ -41,3 +41,6 @@
     </div>
   </div>
 </div>
+
+
+

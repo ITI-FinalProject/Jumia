@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart/cart.service';
+import { DetailApiService } from 'src/app/services/detail-api.service';
 import { HomeService } from 'src/app/services/home/home.service';
 
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -23,7 +25,12 @@ export class HomeComponent implements OnInit {
     1024: { slidesPerview: 6.6, spaceBetween: 40 },
   }
 
-  constructor(private service: HomeService,private cartService:CartService) { }
+  constructor(
+    private service: HomeService,
+    private cartService:CartService,
+    private router:Router,
+    private detailService: DetailApiService,
+    ) { }
 
   ngOnInit(): void {
 
@@ -46,6 +53,11 @@ export class HomeComponent implements OnInit {
 
   addToCart(item:any){
     this.cartService.addToCart(item);
+  }
+
+  goToProductDetails(productDetails:any){
+   this.router.navigate(["/details",productDetails.id]);
+
   }
 
 }

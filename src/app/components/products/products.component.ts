@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DetailApiService } from './../../services/detail-api.service';
 import { ProductApiService } from './../../services/product-api.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,6 +18,7 @@ export class ProductsComponent implements OnInit {
     private api: ProductApiService,
     private detailService: DetailApiService,
     private cartService:CartService,
+    private router:Router,
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +37,8 @@ export class ProductsComponent implements OnInit {
   }
 
   showOnDetails(item: any) {
-    this.detailService.showOnDetails(item);
+   // this.detailService.showOnDetails(item);
+   this.router.navigate(["/details",item.id]);
+
   }
 }

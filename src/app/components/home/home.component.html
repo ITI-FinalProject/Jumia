@@ -110,14 +110,21 @@
       [navigation]="true"
       [breakpoints]="breakpoints"
     >
-      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'">
+      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'" >
         <ng-template swiperSlide *ngIf="item.categories_id == 44">
-          <div class="card card-border-none resp-wrap-align-center">
+          <div class="card card-border-none resp-wrap-align-center " >
             <img
               src="{{ item.image }}"
               class="card-img-top img-fluid rounded"
               alt="..."
+              (click)="goToProductDetails(item)"
+             
+
             />
+            <div class="card-img-overlay"  *ngIf="item.discount!=0  "  (click)="goToProductDetails(item)">
+                <span class=" mx-2 text-light  p-1 bg-danger text-white" >Discount</span>
+           
+            </div>
             <div class="card-body">
               <div class="overflow-hidden">
                 <h5
@@ -128,14 +135,20 @@
               </div>
               <div class="styleprice">
                 <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+                <div *ngIf="item.discount!=0 then blockthen else blockelse "></div>
+                <ng-template  #blockthen>
                 <p class="card-text text-danger text-decoration-line-through">
                   {{ "$ " + item.old_price }}
                 </p>
+              </ng-template>
+              <ng-template #blockelse>
+          <p></p>
+              </ng-template>
               </div>
             </div>
             <div class="alert alert-dark stylealert">
               <button style="border: none; background-color: #D3D3D4;" (click)="addToCart(item)"><i class="fas fa-cart-plus text-primary"></i></button>
-              <i class="fa-solid fa-heart text-primary"></i>
+               <i class="fa-solid fa-heart text-primary"></i>
             </div>
           </div>
         </ng-template>
@@ -157,14 +170,20 @@
       [navigation]="true"
       [breakpoints]="breakpoints"
     >
-      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'">
+      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'" >
         <ng-template swiperSlide *ngIf="item.categories_id == 42">
-          <div class="card card-border-none resp-wrap-align-center">
+          <div class="card card-border-none resp-wrap-align-center " >
             <img
               src="{{ item.image }}"
               class="card-img-top img-fluid rounded"
               alt="..."
+              (click)="goToProductDetails(item)"
+
             />
+            <div class="card-img-overlay"  *ngIf="item.discount!=0  " (click)="goToProductDetails(item)">
+                <span class=" mx-2 text-light  p-1 bg-danger text-white" >Discount</span>
+           
+            </div>
             <div class="card-body">
               <div class="overflow-hidden">
                 <h5
@@ -175,9 +194,15 @@
               </div>
               <div class="styleprice">
                 <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+                <div *ngIf="item.discount!=0 then blockthen else blockelse "></div>
+                <ng-template  #blockthen>
                 <p class="card-text text-danger text-decoration-line-through">
                   {{ "$ " + item.old_price }}
                 </p>
+              </ng-template>
+              <ng-template #blockelse>
+          <p></p>
+              </ng-template>
               </div>
             </div>
             <div class="alert alert-dark stylealert">
@@ -276,14 +301,20 @@
       [navigation]="true"
       [breakpoints]="breakpoints"
     >
-      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'">
-        <ng-template swiperSlide *ngIf="item.categories_id == 46">
-          <div class="card card-border-none resp-wrap-align-center">
+      <ng-container *ngFor="let item of list.products | filter:searchKey:'name'"  >
+        <ng-template swiperSlide *ngIf="item.categories_id == 46"  >
+          <div class="card card-border-none resp-wrap-align-center" >
             <img
+           
               src="{{ item.image }}"
               class="card-img-top img-fluid rounded"
               alt="..."
+              (click)="goToProductDetails(item)"
             />
+            <div class="card-img-overlay"  *ngIf="item.discount!=0  " (click)="goToProductDetails(item)">
+                <span class=" mx-2 text-light  p-1 bg-danger text-white" >Discount</span>
+           
+            </div>
             <div class="card-body">
               <div class="overflow-hidden">
                 <h5
@@ -294,9 +325,15 @@
               </div>
               <div class="styleprice">
                 <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+                <div *ngIf="item.discount!=0 then blockthen else blockelse "></div>
+                <ng-template  #blockthen>
                 <p class="card-text text-danger text-decoration-line-through">
                   {{ "$ " + item.old_price }}
                 </p>
+              </ng-template>
+              <ng-template #blockelse>
+          <p></p>
+              </ng-template>
               </div>
             </div>
             <div class="alert alert-dark stylealert">
