@@ -12,13 +12,13 @@ import { CartService } from 'src/app/services/cart/cart.service';
 export class ProductsComponent implements OnInit {
   public productList: any;
   errorMassage: any;
-  searchKey:string="";
+  searchKey: string = '';
 
   constructor(
     private api: ProductApiService,
-    private detailService: DetailApiService,
-    private cartService:CartService,
-    private router:Router,
+    // private detailService: DetailApiService,
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -31,14 +31,12 @@ export class ProductsComponent implements OnInit {
       }
     );
 
-    this.cartService.search.subscribe((val:any)=>{
+    this.cartService.search.subscribe((val: any) => {
       this.searchKey = val;
-    })
+    });
   }
 
   showOnDetails(item: any) {
-   // this.detailService.showOnDetails(item);
-   this.router.navigate(["/details",item.id]);
-
+    this.router.navigate(['/details', item.id]);
   }
 }

@@ -1,41 +1,50 @@
-<!-- Electronic Device -->
-<div class="container">
-  <h2 lang="ar" class="my-4 mx-4 text-end">المنتجات</h2>
-  <div class="row">
-    <ng-container *ngFor="let item of productList.products | filter:searchKey:'name'">
+<div class="row">
+  <ng-container
+    *ngFor="let item of productList.products | filter: searchKey:'name'"
+  >
+    <div
+      class="card resp-wrap-align-center"
+      style="width: 18rem"
+      routerLink="/details"
+      (click)="showOnDetails(item)"
+    >
+      <img
+        src="{{ item.image }}"
+        class="card-img-top img-fluid rounded"
+        alt="..."
+      />
       <div
-        routerLink="/details"
+        class="card-img-overlay"
+        *ngIf="item.discount != 0"
         (click)="showOnDetails(item)"
-        class="card col-12 col-md-3"
       >
-        <img src="{{ item.image }}" alt="" />
-        <h3 class="ms-auto text-start">{{ item.name }}</h3>
-        <p class="me-auto">$ {{ item.price }}</p>
-        <del class="me-auto">$ {{ item.old_price }} </del>
+        <span class="mx-2 text-light p-1 bg-danger text-white">Discount</span>
       </div>
-    </ng-container>
-  </div>
-</div>
-
-<!-- Clothes -->
-<!-- <div class="container">
-      <h2 lang="ar" class="my-4 mx-4 text-end">الملابس</h2>
-      <div class="row">
-        <ng-container *ngFor="let item of pClothesList">
-          <div
-            routerLink="/details"
-            (click)="showOnDetails(item)"
-            class="card col-md-3"
-          >
-            <img src="{{ item.image }}" alt="" />
-            <h3 class="ms-auto text-start">
-              {{ item.name }}
-            </h3>
-            <p class="me-auto">{{ item.price }} جنيه</p>
-            <del class="me-auto">{{ item.old_price }} جنيه</del>
-          </div>
-        </ng-container>
+      <div class="card-body">
+        <h5
+          class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+        >
+          {{ item.name }}
+        </h5>
+        <div class="styleprice">
+          <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+          <div *ngIf="item.discount != 0; then blockthen; else blockelse"></div>
+          <ng-template #blockthen>
+            <p class="card-text text-danger text-decoration-line-through">
+              {{ "$ " + item.old_price }}
+            </p>
+          </ng-template>
+          <ng-template #blockelse>
+            <p></p>
+          </ng-template>
+        </div>
+      </div>
+      <div class="alert alert-dark stylealert">
+        <button style="border: none; background-color: #d3d3d4">
+          <i class="fas fa-cart-plus text-primary"></i>
+        </button>
+        <i class="fa-solid fa-heart text-primary"></i>
       </div>
     </div>
-
-    <!-- Sports -->
+  </ng-container>
+</div>

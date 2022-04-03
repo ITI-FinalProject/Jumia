@@ -9,7 +9,7 @@
 }
 .card{
     margin: .5rem;
-    
+
 }
 
 // .style_card{
@@ -22,7 +22,7 @@
     height: 400px;
     padding: 1rem;
     transition: 1s;
-    
+
 }
 
 .card:hover .stylealert{
@@ -30,7 +30,7 @@
 
 }
 .card>img:hover,.card>.card-img-overlay:hover{
-     transform: scale(1.1);
+    transform: scale(1.1);
     cursor: pointer;
 
 }
@@ -39,7 +39,7 @@
 .styleprice{
     display: flex;
     justify-content: space-evenly;
-    
+
     p{
         font-size: 17x;
         font-weight: bold;
@@ -54,7 +54,7 @@
     justify-content: space-between;
     opacity: 0;
     transition: all 1s;
-    
+
 }
 
 .style_showmore{
@@ -62,7 +62,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  
+
     margin-top: 3rem;
     margin-bottom: 3rem;
 
@@ -79,7 +79,7 @@
         font-weight: bold;
         padding: 1rem;
     }
-  
+
 }
 
 

@@ -5,7 +5,6 @@ import { BehaviorSubject } from 'rxjs';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -23,18 +22,13 @@ export class DetailApiService {
     this.productList.next(product);
   }
 
-  showOneDetails(product: any) {
-    this.detailItemList = product;
-    this.productList.next(this.detailItemList);
-    // console.log(this.detailItemList);
-  }
-
-
-
-  returnOneProducts(id:any):Observable<Iproducts> {
-
-    return  this.http.get<Iproducts>(environment.BASE_URL + environment.PRODUCTS+"/"+id).pipe(catchError((error)=>{
-      return throwError(()=>error.message||"");
-    }))
+  returnOneProducts(id: any): Observable<Iproducts> {
+    return this.http
+      .get<Iproducts>(environment.BASE_URL + environment.PRODUCTS + '/' + id)
+      .pipe(
+        catchError((error) => {
+          return throwError(() => error.message || '');
+        })
+      );
   }
 }
