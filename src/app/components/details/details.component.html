@@ -1,4 +1,5 @@
-<div class="container ms-5">
+<!-- old -->
+<!-- <div class="container ms-5">
   <div class="row">
     <div class="card col-md-6 col-12">
       <img src="{{ getOneProduct.image }}" alt="not found" />
@@ -35,12 +36,55 @@
           <span style="cursor: pointer">+</span>
         </span>
         <button>Add To Cart</button>
-        <!-- <i class="fa-brands fa-gratipay"></i> -->
         <i class="fa-solid fa-heart"></i>
       </div>
     </div>
   </div>
+</div> -->
+
+<!-- new -->
+<div class="card mb-3" style="max-width: 600px">
+  <div class="row g-0">
+    <div class="col-md-2 images">
+      <ng-container *ngFor="let image of getOneProduct.images">
+        <img src="{{ image }}" class="img-fluid rounded-start" alt="..." />
+      </ng-container>
+    </div>
+    <div class="col-md-4 image">
+      <img
+        src="{{ getOneProduct.image }}"
+        class="img-fluid rounded-start"
+        alt="..."
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title fs-6 d-inline-block text-start">
+          {{ getOneProduct.name }}
+        </h5>
+        <div class="styleprice">
+          <p class="card-text text-muted">{{ "$ " + getOneProduct.price }}</p>
+          <div
+            *ngIf="getOneProduct.discount != 0; then blockthen; else blockelse"
+          ></div>
+          <ng-template #blockthen>
+            <p class="card-text text-danger text-decoration-line-through">
+              {{ "$ " + getOneProduct.old_price }}
+            </p>
+          </ng-template>
+          <ng-template #blockelse>
+            <p></p>
+          </ng-template>
+        </div>
+
+        <!-- <p class="card-text">
+          <small class="text-muted">Quantity: </small>
+        </p> -->
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" type="button">Add to Card</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
