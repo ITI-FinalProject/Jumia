@@ -4,7 +4,16 @@
   box-sizing: border-box;
   font-family: 'Times New Roman',Times,serif;
 }
-
+@media screen and (max-width: 600px) {
+  .images {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    img{
+      margin: 4px;
+    }
+  }
+}
 .card{
   margin: 5rem auto;
   padding: 1rem;
