@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { DetailApiService } from 'src/app/services/detail-api.service';
+import { FavouritService } from 'src/app/services/Favourit/favourit.service';
 import { HomeService } from 'src/app/services/home/home.service';
 
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -17,6 +18,11 @@ export class HomeComponent implements OnInit {
   list: any;
   errorMassage: any;
   searchKey:string="";
+  addToFavourit?:boolean;
+  allFavourit: any;
+
+
+  favourits = new Map<any, boolean>();
 
   breakpoints = {
     320: { slidesPerview: 1.6, spaceBetween: 20 },
@@ -30,6 +36,8 @@ export class HomeComponent implements OnInit {
     private cartService:CartService,
     private router:Router,
     private detailService: DetailApiService,
+    private  FavouritService:FavouritService
+
     ) { }
 
   ngOnInit(): void {
@@ -37,6 +45,9 @@ export class HomeComponent implements OnInit {
     this.service.retutnHome().subscribe(
       (data) => {
         this.list = data;
+        this.list.products.forEach((e:any) => {
+          this.favourits.set(e.id,e.in_favorites);
+        });
         console.log(this.list);
         
       },
@@ -47,7 +58,9 @@ export class HomeComponent implements OnInit {
 
     this.cartService.search.subscribe((val:any)=>{
       this.searchKey = val;
-    })
+    });
+
+    this.getAllToFavourit();
   }
 
 
@@ -58,6 +71,42 @@ export class HomeComponent implements OnInit {
   goToProductDetails(productDetails:any){
    this.router.navigate(["/details",productDetails.id]);
 
+  }
+
+  addtofav(item:any){
+    this.FavouritService.addToFav(item);
+    this.addToFavourit=true;
+
+  }
+  removeItemFav(item:any){
+    this.FavouritService.removeFavItem(item);
+    this.addToFavourit=false;
+
+  }
+
+  getAllToFavourit( ){
+    this.FavouritService.returnAllToFavourit().subscribe(
+      (data) => {
+        this.allFavourit = data;
+        console.log(this.allFavourit);
+      },
+      (error) => {
+        this.errorMassage = error;
+      }
+    )
+   }
+
+  AddToFavourit( id :any){
+   this.FavouritService.addToFavourit(id).subscribe(()=>{
+    this.addToFavourit=true;
+    // this.favourits.get(id)!= this.favourits.get(id);
+   });
+  }
+
+  removeToFavourit( id :any){
+    this.FavouritService.removeFromFavourit(id).subscribe(()=>{
+      this.addToFavourit=false;
+     });
   }
 
 }

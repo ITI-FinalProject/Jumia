@@ -101,3 +101,41 @@
     color: rgb(168, 47, 47);
 }
 
+  
+.styleBanner {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+  
+    div {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      width: 100%;
+      top: 50%;
+      color: white;
+      font-size: 20px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      border: none;
+  
+      text-align: center;
+  
+      button {
+        border-radius: 2rem;
+        background-color: orange;
+        border: none;
+      }
+  
+      input {
+        border-radius: 2rem;
+        padding: 1rem;
+        border: none;
+      }
+    }
+  
+    img {
+      opacity: 0.8;
+    }
+  }

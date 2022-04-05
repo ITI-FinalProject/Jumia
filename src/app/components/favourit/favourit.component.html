@@ -1,0 +1,73 @@
+
+<div class="row g-0">
+    <ng-container
+    *ngFor="let item of products ">
+    <div class="card card-border-none resp-wrap-align-center col-md-3">
+        <img
+          src="{{ item.image }}"
+          class="card-img-top img-fluid rounded "
+          alt="..."
+          
+        />
+        <div
+          class="card-img-overlay"
+          *ngIf="item.discount != 0"
+         
+        >
+          <span class="mx-2 text-light p-1 bg-danger text-white"
+            >Discount</span
+          >
+        </div>
+        <div class="card-body">
+          <div class="overflow-hidden">
+            <h5
+              class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+            >
+              {{ item.name }}
+            </h5>
+          </div>
+          <div class="styleprice">
+            <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+            <div
+              *ngIf="item.discount != 0; then blockthen; else blockelse"
+            ></div>
+            <ng-template #blockthen>
+              <p class="card-text text-danger text-decoration-line-through">
+                {{ "$ " + item.old_price }}
+              </p>
+            </ng-template>
+            <ng-template #blockelse>
+              <p></p>
+            </ng-template>
+          </div>
+        </div>
+        <div class="alert alert-dark stylealert">
+          <!-- <button style="border: none; background-color: #D3D3D4;" (click)="addToCart(item)"><i class="fas fa-cart-plus text-primary"></i></button>
+           <i *ngIf="!addToFavourit" class="far fa-heart text-primary" (click)="addtofav(item)"></i>
+           <i *ngIf=" addToFavourit" class="fas fa-heart text-primary" (click)="removeItemFav(item)"></i> -->
+    
+    
+        </div>
+      </div>
+    </ng-container>
+    
+    
+</div>
+
+
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container pt-5">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+    
+        <div class="center">
+            <img src="https://www.metro-markets.com/plugins/user/images/emptycart.png" alt="">
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <button routerLink="/product" class="btn btn-primary ">SHOP NOW</button>
+        </div>
+    </div>
+    
+</ng-container>
