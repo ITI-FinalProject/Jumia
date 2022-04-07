@@ -10,7 +10,8 @@ import { CartService } from 'src/app/services/cart/cart.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  public productList: any;
+  public productList: any = [];
+  public filterCategory: any;
   errorMassage: any;
   searchKey: string = '';
 
@@ -25,6 +26,7 @@ export class ProductsComponent implements OnInit {
     this.api.getProducts().subscribe(
       (res) => {
         this.productList = res;
+        this.filterCategory = res;
       },
       (error) => {
         this.errorMassage = error;
@@ -38,5 +40,13 @@ export class ProductsComponent implements OnInit {
 
   showOnDetails(item: any) {
     this.router.navigate(['/details', item.id]);
+  }
+
+  filter(category_id: number) {
+    this.filterCategory = this.productList.filter((a: any) => {
+      if (a.categories_id === category_id || category_id === 0) {
+        return a;
+      }
+    });
   }
 }

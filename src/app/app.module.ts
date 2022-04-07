@@ -25,9 +25,6 @@ import { SwiperModule } from 'swiper/angular';
 import { FilterPipe } from './shared/page-notfound/filter.pipe';
 import { FavouritComponent } from './components/favourit/favourit.component';
 
-// @NgModule({
-//   declarations: [AppComponent, ProductsComponent, DetailsComponent],
-
 @NgModule({
   declarations: [
     AppComponent,

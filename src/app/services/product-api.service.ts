@@ -11,12 +11,15 @@ export class ProductApiService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Iproducts[]> {
-    return this.http
-      .get<Iproducts[]>(environment.BASE_URL + environment.HOME)
-      .pipe(
-        catchError((error) => {
-          return throwError(() => error.message || '');
-        })
-      );
+    return (
+      this.http
+        .get<Iproducts[]>('http://localhost:3000/products')
+        // environment.BASE_URL + environment.HOME)
+        .pipe(
+          catchError((error) => {
+            return throwError(() => error.message || '');
+          })
+        )
+    );
   }
 }

@@ -1,50 +1,126 @@
-<div class="row g-0">
-  <ng-container
-    *ngFor="let item of productList.products | filter: searchKey:'name'"
-  >
-    <div
-      class="card resp-wrap-align-center"
-      style="width: 18rem"
-      routerLink="/details"
-      (click)="showOnDetails(item)"
-    >
-      <img
-        src="{{ item.image }}"
-        class="card-img-top img-fluid rounded"
-        alt="..."
-      />
-      <div
-        class="card-img-overlay"
-        *ngIf="item.discount != 0"
-        (click)="showOnDetails(item)"
-      >
-        <span class="mx-2 text-light p-1 bg-danger text-white">Discount</span>
-      </div>
+<div class="row cont">
+  <div class="col-sm-3">
+    <div class="card type_card">
       <div class="card-body">
-        <h5
-          class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
-        >
-          {{ item.name }}
-        </h5>
-        <div class="styleprice">
-          <p class="card-text text-muted">{{ "$ " + item.price }}</p>
-          <div *ngIf="item.discount != 0; then blockthen; else blockelse"></div>
-          <ng-template #blockthen>
-            <p class="card-text text-danger text-decoration-line-through">
-              {{ "$ " + item.old_price }}
-            </p>
-          </ng-template>
-          <ng-template #blockelse>
-            <p></p>
-          </ng-template>
-        </div>
-      </div>
-      <div class="alert alert-dark stylealert">
-        <button style="border: none; background-color: #d3d3d4">
-          <i class="fas fa-cart-plus text-primary"></i>
-        </button>
-        <i class="fa-solid fa-heart text-primary"></i>
+        <h2 class="card-title">Product Type</h2>
+        <p class="card-text" (click)="filter(0)">All Products</p>
+        <p class="card-text" (click)="filter(44)">Electrionic Devices</p>
+        <p class="card-text" (click)="filter(43)">Prevent Corona</p>
+        <p class="card-text" (click)="filter(42)">Sports</p>
+        <p class="card-text" (click)="filter(40)">Lighting</p>
+        <p class="card-text" (click)="filter(46)">Clothes</p>
       </div>
     </div>
-  </ng-container>
+  </div>
+  <div class="col-sm-9">
+    <div class="row g-0">
+      <ng-container
+        *ngFor="let item of filterCategory | filter: searchKey:'name'"
+      >
+        <div
+          class="card product_card resp-wrap-align-center"
+          style="width: 18rem"
+        >
+          <img
+            src="{{ item.image }}"
+            class="card-img-top img-fluid rounded"
+            alt="..."
+            routerLink="/details"
+            (click)="showOnDetails(item)"
+          />
+          <div
+            class="card-img-overlay"
+            *ngIf="item.discount != 0"
+            routerLink="/details"
+            (click)="showOnDetails(item)"
+          >
+            <span class="mx-2 text-light p-1 bg-danger text-white"
+              >Discount</span
+            >
+          </div>
+          <div class="card-body">
+            <h5
+              class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+            >
+              {{ item.name }}
+            </h5>
+            <div class="styleprice">
+              <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+              <div
+                *ngIf="item.discount != 0; then blockthen; else blockelse"
+              ></div>
+              <ng-template #blockthen>
+                <p class="card-text text-danger text-decoration-line-through">
+                  {{ "$ " + item.old_price }}
+                </p>
+              </ng-template>
+              <ng-template #blockelse>
+                <p></p>
+              </ng-template>
+            </div>
+          </div>
+          <div class="alert alert-dark stylealert">
+            <button style="border: none; background-color: #d3d3d4">
+              <i class="fas fa-cart-plus text-primary"></i>
+            </button>
+            <i class="fa-solid fa-heart text-primary"></i>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </div>
+
+<!-- old -->
+<!-- <div class="container">
+  <div class="row g-0">
+    <ng-container
+      *ngFor="let item of productList.products | filter: searchKey:'name'"
+    >
+      <div class="card resp-wrap-align-center" style="width: 18rem">
+        <img
+          src="{{ item.image }}"
+          class="card-img-top img-fluid rounded"
+          alt="..."
+          routerLink="/details"
+          (click)="showOnDetails(item)"
+        />
+        <div
+          class="card-img-overlay"
+          *ngIf="item.discount != 0"
+          routerLink="/details"
+          (click)="showOnDetails(item)"
+        >
+          <span class="mx-2 text-light p-1 bg-danger text-white">Discount</span>
+        </div>
+        <div class="card-body">
+          <h5
+            class="card-title fs-6 d-inline-block text-truncate font-monospace text-start text-primary"
+          >
+            {{ item.name }}
+          </h5>
+          <div class="styleprice">
+            <p class="card-text text-muted">{{ "$ " + item.price }}</p>
+            <div
+              *ngIf="item.discount != 0; then blockthen; else blockelse"
+            ></div>
+            <ng-template #blockthen>
+              <p class="card-text text-danger text-decoration-line-through">
+                {{ "$ " + item.old_price }}
+              </p>
+            </ng-template>
+            <ng-template #blockelse>
+              <p></p>
+            </ng-template>
+          </div>
+        </div>
+        <div class="alert alert-dark stylealert">
+          <button style="border: none; background-color: #d3d3d4">
+            <i class="fas fa-cart-plus text-primary"></i>
+          </button>
+          <i class="fa-solid fa-heart text-primary"></i>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div> -->

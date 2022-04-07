@@ -160,8 +160,17 @@
               >
                 <i class="fas fa-cart-plus text-primary"></i>
               </button>
-              <i *ngIf="!addToFavourit" class="far fa-heart text-primary" (click)="addtofav(item)"></i>
-               <i *ngIf=" addToFavourit" class="fas fa-heart text-primary" (click)="removeItemFav(item)"></i>            </div>
+              <i
+                *ngIf="!addToFavourit"
+                class="far fa-heart text-primary"
+                (click)="addtofav(item)"
+              ></i>
+              <i
+                *ngIf="addToFavourit"
+                class="fas fa-heart text-primary"
+                (click)="removeItemFav(item)"
+              ></i>
+            </div>
           </div>
         </ng-template>
       </ng-container>
@@ -386,13 +395,14 @@
 </div>
 
 <!-- start banner -->
-<div class="container-fluid styleBanner  col-12 g-0  my-5">
-  <img src="assets/banner2.png">
-  <div >
-    <p class="text-start">Subscribe to our newsletter and<br>
-      receive exclusive offers every week</p>
-      <input type="text" placeholder="Enter Your Email">
-      <button class="text-dark">SUBSCRIBE</button>
-   </div>
-
-</div> 
+<div class="container-fluid styleBanner col-12 g-0 my-5">
+  <img src="assets/banner2.png" />
+  <div>
+    <p class="text-start">
+      Subscribe to our newsletter and<br />
+      receive exclusive offers every week
+    </p>
+    <input type="text" placeholder="Enter Your Email" />
+    <button class="text-dark">SUBSCRIBE</button>
+  </div>
+</div>
